@@ -41,6 +41,7 @@ export const InputBox = styled.div`
 `;
 export const Input = styled.input`
   border: none;
+  outline: none;
   background: transparent;
   width: 100%;
   margin-left: 20px;
