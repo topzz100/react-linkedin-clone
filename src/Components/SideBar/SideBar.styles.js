@@ -4,13 +4,15 @@ export const Wrapper = styled.div`
    flex: 0.2; 
    margin-top: 20px;
    margin-right: 20px;
-   background-color: white;
-   border-radius: 15px;
+  //  background-color: white;
+   
    
    
 `;
 export const Top = styled.div`
-    
+    background-color: white;
+    border-radius: 15px;
+    padding-bottom: 20px;
 `;
 export const TopAbout = styled.div`
    display: flex;

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   margin-top: 20px;
-
+  
 `;
 export const Post = styled.div`
   padding: 15px;
