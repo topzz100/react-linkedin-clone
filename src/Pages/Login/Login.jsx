@@ -1,12 +1,13 @@
+import { ArrowForward, ChevronRight } from '@mui/icons-material'
 import React from 'react'
-import { JoinBtn, Logo, Nav, Right, SignInBtn, Wrapper } from './Login.styles'
+import { Btn, Hero, JoinBtn, LeftSec, Logo, Nav, Right, RightSec, Section, SignInBtn, Title, Wrapper } from './Login.styles'
 
 const Login = () => {
   return (
     <>
       <Wrapper>
         <Nav>
-          <Logo src='https://logos-download.com/wp-content/uploads/2016/03/LinkedIn_Logo_2019.png'/>
+          <Logo src='/images/login-logo.svg'/>
           <Right>
             <JoinBtn>
               Join now
@@ -16,6 +17,28 @@ const Login = () => {
             </SignInBtn>
           </Right>
         </Nav>
+        <Section>
+          <LeftSec>
+            <Title>
+              Welcome to your professional community
+            </Title>
+            <Btn>
+              <span>Search for a job</span>
+              <ArrowForward/>
+            </Btn>
+            <Btn>
+              <span>Find a person you know</span>
+              <ArrowForward/>
+            </Btn>
+            <Btn>
+              <span>Learn anew skill</span>
+              <ArrowForward/>
+            </Btn>
+          </LeftSec>
+          <RightSec>
+            <Hero src='/images/login-hero.svg'/>
+          </RightSec>
+        </Section>
 
       </Wrapper>
     </>

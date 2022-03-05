@@ -25,11 +25,12 @@ export const TopStat = styled.div`
 
 `;
 export const ImgBox = styled.div`
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid white;
-  margin-top: -40px;
+   width: 80px;
+    height: 80px;
+   border-radius: 50%; 
+   border: 3px solid white; 
+  margin-top: -40px; 
+  /* overflow : hidden; */
 `;
 export const CoverImage = styled.img`
    width: 100%;
