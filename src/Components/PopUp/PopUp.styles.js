@@ -32,13 +32,61 @@ export const PopTitle = styled.div`
 `;
 export const PopTop = styled.div`
   padding: 15px;
+  display: flex;
+  align-items: center;
 `;
-export const Image = styled.img`
+export const Pic = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 50%;
 `;
-export const Name = styled.div`
-
+export const PostInfo = styled.div`
+  margin-left: 5px;
 `;
+export const Name = styled.h4`
+  margin-bottom: 2px;
+`;
+export const Form = styled.form`
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  padding: 15px;
+ 
+  textarea{
+    width: 100%;
+    margin-bottom: 30px;
+    resize: none;
+
+  }
+`;
+export const PostOption = styled.div`
+  padding: 7px 15px;
+  border: 1px solid gray;
+  color: gray;
+  border-radius: 15px;
+`;
+export const PopFooter = styled.div`
+  width: 100%auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  align-items: flex-end;
+`;
+export const PopUpload = styled.div`
+  span{
+    margin-right: 10px
+  }
+`;
+export const PopButton = styled.button`
+  font-size: 0.9rem;
+  background-color: lightgray;
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 7px;
+`;
+
 
