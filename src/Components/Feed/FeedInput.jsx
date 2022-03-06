@@ -10,7 +10,7 @@ import InputOption from './InputOption'
 import { db } from '../../firebase'
 
 
-const FeedInput = (e) => {
+const FeedInput = ({setShow}) => {
   const [inputValue, setInputValue] = useState('')
 
   const handlePost = async(e) => {
@@ -42,7 +42,7 @@ const FeedInput = (e) => {
           <Avatar style={{height: '55px', width: '55px'}}/>
             <Form >
               <InputBox>
-                <Input type='text' value={inputValue} onChange = {(e)=>(setInputValue(e.target.value))} placeholder='Start a post'/>
+                <Input type='text' value={inputValue} onChange = {(e)=>(setInputValue(e.target.value))} placeholder='Start a post' onClick = {() => setShow(true)}/>
               </InputBox>
               <button type='submit' onClick={handlePost}></button>
             </Form>

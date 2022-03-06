@@ -1,15 +1,17 @@
 import { Close, Image, VideoLibrary } from '@mui/icons-material'
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Pic, Name, Pop, PopTitle, PopFooter, PopUpload, PopButton, PopTop, PostInfo, PostOption, Wrapper } from './PopUp.styles'
 
-const PopUp = () => {
+const PopUp = ({setShow}) => {
+  
+
   return (
     <>
       <Wrapper>
         <Pop>
           <PopTitle>
             <h4>Create Post</h4>
-            <Close/>
+            <Close onClick = {() => setShow(false)}/>
           </PopTitle>
           <PopTop>
             <Pic src = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'/>
@@ -23,14 +25,14 @@ const PopUp = () => {
             </PostInfo>
           </PopTop>
           <Form>
-            <textarea autoFocus placeholder='What do you want to talk about?'></textarea>
+            <textarea placeholder='What do you want to talk about?'></textarea>
             <PopFooter>
               <PopUpload>
                 <span>
-                  <Image/>
+                  <Image style = {{color: 'red'}}/>
                 </span>
                 <span>
-                  <VideoLibrary/>
+                  <VideoLibrary style = {{color: 'green'}}/>
                 </span>
                 
               </PopUpload>

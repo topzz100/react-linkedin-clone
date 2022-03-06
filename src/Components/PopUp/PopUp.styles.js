@@ -14,7 +14,7 @@ export const Pop = styled.div`
   margin: auto;
   margin-top: 30px;
   width: 600px;
-  height: 400px;
+  min-height: 300px;
   border-radius: 15px;
   background-color: white;
 `;
@@ -47,10 +47,6 @@ export const Name = styled.h4`
   margin-bottom: 2px;
 `;
 export const Form = styled.form`
-  display: flex;  
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   
   padding: 15px;
  
@@ -58,6 +54,9 @@ export const Form = styled.form`
     width: 100%;
     margin-bottom: 30px;
     resize: none;
+    min-height:150px;
+    border: none;
+    padding: 5px;
 
   }
 `;
@@ -68,12 +67,10 @@ export const PostOption = styled.div`
   border-radius: 15px;
 `;
 export const PopFooter = styled.div`
-  width: 100%auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  display: flex;
-  align-items: flex-end;
+  
 `;
 export const PopUpload = styled.div`
   span{
@@ -82,11 +79,14 @@ export const PopUpload = styled.div`
 `;
 export const PopButton = styled.button`
   font-size: 0.9rem;
-  background-color: lightgray;
+  background-color: whitesmoke;
   color: gray;
   border: 1px solid gray;
   border-radius: 10px;
-  padding: 7px;
+  padding: 7px 12px;
+  :hover{
+    background-color: lightgrey;
+  }
 `;
 
 

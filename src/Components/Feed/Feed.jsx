@@ -3,11 +3,11 @@ import Posts from '../Posts/Posts'
 import { Wrapper } from './Feed.styles'
 import FeedInput from './FeedInput'
 
-const Feed = () => {
+const Feed = ({setShow}) => {
   return (
     <>
       <Wrapper>
-        <FeedInput/>
+        <FeedInput setShow = {setShow}/>
         <Posts/>
       </Wrapper>
     </>

@@ -4,12 +4,12 @@ import RightBar from '../RightBar/RightBar'
 import SideBar from '../SideBar/SideBar'
 import { Wrapper } from './Main.styles'
 
-const Main = () => {
+const Main = ({setShow}) => {
   return (
     <>
       <Wrapper>
         <SideBar/>
-        <Feed/>
+        <Feed setShow = {setShow}/>
         <RightBar/>
       </Wrapper>
     </>
