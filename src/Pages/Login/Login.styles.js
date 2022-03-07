@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
+  height: 100vh;
 `;
 export const Nav = styled.div`
   height: 10vh;
@@ -49,6 +49,7 @@ export const  SignInBtn = styled.button`
 export const Section = styled.div`
   height: 90vh;
   display: flex;
+  overflow: hidden;
 `;
 export const LeftSec = styled.div`
   flex: 0.5;

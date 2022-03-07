@@ -1,8 +1,48 @@
 import { ArrowForward, ChevronRight } from '@mui/icons-material'
 import React from 'react'
 import { Btn, Hero, JoinBtn, LeftSec, Logo, Nav, Right, RightSec, Section, SignInBtn, Title, Wrapper } from './Login.styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { login, logout, selectUser } from '../../features/user/userSlice';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+
 
 const Login = () => {
+  const user = useSelector(selectUser)
+  const dispatch = useDispatch()
+
+  const handleLogin = () => {
+    if(!user){
+      const provider = new GoogleAuthProvider();
+      const auth = getAuth();
+      signInWithPopup(auth, provider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        dispatch(login({
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
+          photoUrl: user.photoURL
+        }))
+
+        console.log(user)
+    }).catch((error) => {
+        console.log(error);
+
+      });
+    }else{
+      const auth = getAuth();
+        signOut(auth).then(() => {
+          console.log('logout')
+          dispatch(logout())
+          window.location.replace('/login');
+        }).catch((error) => {
+          console.log(error)
+      });
+      
+    }
+
+  }
   return (
     <>
       <Wrapper>
@@ -12,7 +52,7 @@ const Login = () => {
             <JoinBtn>
               Join now
             </JoinBtn>
-            <SignInBtn>
+            <SignInBtn onClick={handleLogin}>
               Sign In
             </SignInBtn>
           </Right>

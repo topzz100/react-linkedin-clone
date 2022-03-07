@@ -1,9 +1,34 @@
 import { Close, Image, VideoLibrary } from '@mui/icons-material'
 import React, { useState } from 'react'
 import { Form, Pic, Name, Pop, PopTitle, PopFooter, PopUpload, PopButton, PopTop, PostInfo, PostOption, Wrapper } from './PopUp.styles'
+import { addDoc, collection, serverTimestamp, } from 'firebase/firestore'
+import { db } from '../../firebase'  
 
 const PopUp = ({setShow}) => {
-  
+  const [inputValue, setInputValue] = useState('')
+
+   const handlePost = async(e) => {
+    e.preventDefault()
+    if(inputValue){
+      try {
+            const docRef = await addDoc(collection(db, "posts"), {
+              name: 'Tope Adenekan',
+              deccription: 'Trying this out',
+              message: inputValue,
+              photoUrl : '',
+              timestamp: serverTimestamp()
+              
+          });
+      
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+
+    }
+    
+    setInputValue('')
+    setShow(false)
+  }
 
   return (
     <>
@@ -25,7 +50,7 @@ const PopUp = ({setShow}) => {
             </PostInfo>
           </PopTop>
           <Form>
-            <textarea placeholder='What do you want to talk about?'></textarea>
+            <textarea value = {inputValue} onChange ={(e) => {setInputValue(e.target.value)}} placeholder='What do you want to talk about?'></textarea>
             <PopFooter>
               <PopUpload>
                 <span>
@@ -36,7 +61,7 @@ const PopUp = ({setShow}) => {
                 </span>
                 
               </PopUpload>
-              <PopButton>
+              <PopButton type = 'submit' onClick={handlePost}>
                 Send
               </PopButton>
             </PopFooter>
