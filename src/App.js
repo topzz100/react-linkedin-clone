@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 // import Header from './Components/Header/Header';
@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import { selectUser } from './features/user/userSlice';
 
 function App() {
+ 
   const user = useSelector(selectUser)
   return (
     <div className="App">

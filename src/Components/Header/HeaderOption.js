@@ -1,7 +1,7 @@
 import React from 'react'
-import { Option, TitleTag } from './Header.styles'
+import { Option, TitleTag, UserImg } from './Header.styles'
 
-const HeaderOption = ({Icon, Title, Avatar}) => {
+const HeaderOption = ({Icon, Title, Avatar, photo}) => {
   return (
     <>
       <Option>
@@ -10,6 +10,9 @@ const HeaderOption = ({Icon, Title, Avatar}) => {
         }
         {
           Avatar && <Avatar style = {{fontSize: '27px'}}/>
+        }
+          {
+          photo && <UserImg src={photo}/>
         }
         <TitleTag>
           {Title}

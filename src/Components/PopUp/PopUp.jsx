@@ -1,21 +1,40 @@
 import { Close, Image, VideoLibrary } from '@mui/icons-material'
 import React, { useState } from 'react'
-import { Form, Pic, Name, Pop, PopTitle, PopFooter, PopUpload, PopButton, PopTop, PostInfo, PostOption, Wrapper } from './PopUp.styles'
+import { Form, FileImage, Pic, Name, Pop, PopTitle, PopFooter, PopUpload, PopButton, PopTop, PostInfo, PostOption, Wrapper } from './PopUp.styles'
 import { addDoc, collection, serverTimestamp, } from 'firebase/firestore'
-import { db } from '../../firebase'  
+import { db, storage } from '../../firebase'  
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 const PopUp = ({setShow}) => {
   const [inputValue, setInputValue] = useState('')
+  const [file, setFile] = useState(null)
+  const [picUrl, setPicUrl] = useState('')
+  const filename = Date.now() + file?.name
 
    const handlePost = async(e) => {
     e.preventDefault()
     if(inputValue){
+      if(!file) return;
+          const storageRef = ref(storage, `images/${filename}`)
+
+        // 'file' comes from the Blob or File API
+        uploadBytes(storageRef, file).then((snapshot) => {
+          console.log('Uploaded a blob or file!');
+        });
+        getDownloadURL(ref(storage, 'images/'+filename))
+        .then((url) => {
+          setPicUrl(url)
+        })
+        .catch((error) => {
+      
+      })
+     
       try {
             const docRef = await addDoc(collection(db, "posts"), {
               name: 'Tope Adenekan',
               deccription: 'Trying this out',
               message: inputValue,
-              photoUrl : '',
+              photoUrl : file && picUrl,
               timestamp: serverTimestamp()
               
           });
@@ -29,6 +48,8 @@ const PopUp = ({setShow}) => {
     setInputValue('')
     setShow(false)
   }
+  console.log(file)
+  console.log(picUrl)
 
   return (
     <>
@@ -51,10 +72,16 @@ const PopUp = ({setShow}) => {
           </PopTop>
           <Form>
             <textarea value = {inputValue} onChange ={(e) => {setInputValue(e.target.value)}} placeholder='What do you want to talk about?'></textarea>
+
+            {file && <FileImage src= {URL.createObjectURL(file)}/>}
             <PopFooter>
               <PopUpload>
                 <span>
-                  <Image style = {{color: 'red'}}/>
+                  <input type="file" id = 'file' onChange={(e) => {setFile(e.target.files[0])}} style = {{display: 'none'}}/>
+                  <label for='file'>
+                    <Image style = {{color: 'red'}} />
+                  </label>
+                  
                 </span>
                 <span>
                   <VideoLibrary style = {{color: 'green'}}/>

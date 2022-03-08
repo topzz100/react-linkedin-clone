@@ -88,5 +88,10 @@ export const PopButton = styled.button`
     background-color: lightgrey;
   }
 `;
+export const FileImage = styled.img`
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 20px;
+`;
 
 

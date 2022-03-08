@@ -12,6 +12,11 @@ export const InputWrapper = styled.div`
   border: 1px solid lightgray;
   padding: 15px;
 `;
+export const Image = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+`
 export const Top = styled.div`
   display: flex;
   align-items: center;

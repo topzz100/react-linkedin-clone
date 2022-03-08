@@ -1,13 +1,17 @@
 import { AccountCircle, Home, Message, Notifications, People, Search, Work } from '@mui/icons-material'
 import React from 'react'
-import { Image, Left, Right, SearchBox, Wrapper } from './Header.styles'
+import { Image, Left, Right, SearchBox, UserImg, Wrapper } from './Header.styles'
 import HeaderOption from './HeaderOption'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../features/user/userSlice'
 
 const Header = () => {
+  const user = useSelector(selectUser)
   return (
     <>
       <Wrapper>
         <Left>
+          
           <Image src='https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw'/>
           <SearchBox>
             <Search/>
@@ -21,7 +25,10 @@ const Header = () => {
           <HeaderOption Icon = {Work} Title = 'Jobs'/>
           <HeaderOption Icon = {Message} Title = 'Messagings'/>
           <HeaderOption Icon = {Notifications} Title = 'Notifications'/>
-          <HeaderOption Avatar ={AccountCircle} Title = 'Me'/>
+          {
+            user? <HeaderOption photo = {user.photoUrl} Title = 'Me'/> : <HeaderOption Avatar ={AccountCircle} Title = 'Me'/>
+          }
+          
         </Right>
       </Wrapper>
     </>

@@ -18,24 +18,24 @@ export const Right = styled.div`
   align-items: center;
 `;
 export const Image = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   margin-right: 10px;
  
 `;
 export const SearchBox = styled.div`
-  width: 350px;
+  width: 300px;
   display: flex;
   align-items: center;
   background-color: #eef3f8;
   border-radius: 3px;
-  padding: 0 15px;
+  padding: 0 10px;
   color: gray;
   input{
     width: 100%;
     border: none;
     outline: none;
-    font-size: 1.05rem;
+    font-size: .9rem;
     height: 100%;
     background: transparent;
   }
@@ -58,7 +58,12 @@ export const Option = styled.div`
   
 `;
 export const TitleTag = styled.h5`
-  font-size: .85rem;
+  font-size: .8rem;
   font-weight: 400;
 `;
+export const UserImg = styled.img`
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+`
 
