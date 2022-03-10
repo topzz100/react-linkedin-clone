@@ -20,11 +20,31 @@ export const TopRight = styled.div`
   margin-left: 15px;
 `;
 export const Name = styled.h4`
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 `;
 export const Desc = styled.p`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 `;
 export const Message = styled.p`
   margin-top: 20px;
+  font-size: 0.8rem;
+`;
+export const Image = styled.img`
+  margin-top: 10px;
+  width: 100%;
+  object-fit: contain;
+`;
+export const UserPic = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+`;
+export const PostFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const SingleFooter = styled.div`
+  display: flex;
+  align-items: center;
 `;

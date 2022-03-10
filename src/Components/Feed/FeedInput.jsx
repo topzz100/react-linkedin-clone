@@ -1,13 +1,11 @@
 import { Article, Event, InsertPhoto, OndemandVideo } from '@mui/icons-material'
 import { Avatar } from '@mui/material'
-import { addDoc, collection, serverTimestamp, } from 'firebase/firestore'
 // import firebase from 'firebase'
 import React, { useState } from 'react'
 import { Bottom, Form, Image, Input, InputBox, InputWrapper, Top } from './Feed.styles'
 
 import InputOption from './InputOption'
 
-import { db } from '../../firebase'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/user/userSlice'
 

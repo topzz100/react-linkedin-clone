@@ -57,13 +57,40 @@ export const Option = styled.div`
   }
   
 `;
+export const SignOut = styled.button`
+  bottom : -20px;
+  width: 70px;
+  
+  right: -50px; 
+  position: absolute;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  border: 1px solid black;
+  opacity: 0;
+`;
+
 export const TitleTag = styled.h5`
   font-size: .8rem;
   font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+      ${SignOut}{
+        opacity: 1;
+      }
+    }
+  span{
+    
+  }
 `;
+
 export const UserImg = styled.img`
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-`
+`;
+
 

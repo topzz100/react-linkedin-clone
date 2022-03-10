@@ -16,7 +16,7 @@ export const Title = styled.h3`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 10px;
 `;
@@ -26,8 +26,8 @@ export const RecoItems = styled.div`
   /* align-items: center; */
 `;
 export const Image = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
 `;
 export const RecoContent = styled.div`
@@ -43,7 +43,7 @@ export const RecoDesc = styled.p`
   margin-bottom: 5px;
   span{
     margin-right: 5px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     :nth-child(2){
         background-color: black;
         height: 3px;
@@ -61,7 +61,7 @@ export const RecoButton = styled.button`
   border-radius: 18px;
   border: 1px solid gray;
   color: gray;
-  font-size: 1.1rem;
+  font-size: 1rem;
   background: transparent;
 
 `;
@@ -71,7 +71,7 @@ export const Forward = styled.div`
   color: grey;
   span{
     margin-right: 10px;
-    font-size: .9rem;
+    font-size: .8rem;
     font-weight: 400;
   }
 `

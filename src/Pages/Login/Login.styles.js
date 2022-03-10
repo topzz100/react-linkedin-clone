@@ -20,10 +20,10 @@ export const Right = styled.div`
 export const  JoinBtn = styled.button`
   border: none;
   background: transparent;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: gray;
-  padding: 9px 15px;
+  padding: 7px 12px;
   border-radius: 10px;
   transition: 0.5s ease-in-out;
   :hover{
@@ -31,19 +31,19 @@ export const  JoinBtn = styled.button`
   }
 `;
 export const  SignInBtn = styled.button`
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border: 1px solid blue;
-  padding: 9px 25px;
+  padding: 7px 20px;
   color: blue; 
   background: transparent;
   transition: 0.5s linear;
   margin-left: 10px;
-  border-radius: 22px;
+  border-radius: 20px;
   
   :hover{
     background-color: lightblue;
-    border: 2px solid blue;
+    border: 1.5px solid blue;
   }
 `;
 export const Section = styled.div`
@@ -53,7 +53,7 @@ export const Section = styled.div`
 `;
 export const LeftSec = styled.div`
   flex: 0.5;
-  padding: 30px;
+  padding: 10px;
   padding-left: 100px;
 `;
 export const RightSec = styled.div`
@@ -71,22 +71,22 @@ export const Hero = styled.img`
   right: -110px;
 `;
 export const Title = styled.p`
-  margin-top: 30px;
+  margin-top: 20px;
   color: #bfaa6f;
-  font-size: 4rem;
-  font-weight: 100;
+  font-size: 3.7rem;
+  font-weight: 200;
   width: 100%;
   margin-bottom: 50px;
 `;
 
 export const Btn = styled.button`
   width: 450px;
-  height: 70px;
+  height: 60px;
   background: transparent;
   border: 1px solid lightgray;
   border-radius: 10px;
   padding: 15px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

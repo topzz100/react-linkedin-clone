@@ -37,8 +37,8 @@ margin-left: 10px;
 `;
 export const InputBox = styled.div`
   width: 100%;
-  height: 55px;
-  border-radius: 25px;
+  height: 45px;
+  border-radius: 21px;
   background-color: whitesmoke;
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@ export const Input = styled.input`
   background: transparent;
   width: 100%;
   margin-left: 20px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 `;
 export const Option = styled.div`
   display: flex;
@@ -58,7 +58,7 @@ export const Option = styled.div`
 `;
 export const OptionTitle = styled.h4`
   margin-left: 10px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: gray;
   font-weight: 400;
 `;

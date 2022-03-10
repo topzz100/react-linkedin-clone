@@ -24,22 +24,12 @@ const Login = () => {
           displayName: user.displayName,
           photoUrl: user.photoURL
         }))
-
+        
         console.log(user)
     }).catch((error) => {
         console.log(error);
 
       });
-    }else{
-      const auth = getAuth();
-        signOut(auth).then(() => {
-          console.log('logout')
-          dispatch(logout())
-          window.location.replace('/login');
-        }).catch((error) => {
-          console.log(error)
-      });
-      
     }
 
   }

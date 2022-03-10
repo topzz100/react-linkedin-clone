@@ -1,19 +1,22 @@
 import { Avatar } from '@mui/material'
 import React from 'react'
-import { Desc, Message, Name, Post, Top, TopRight } from './Posts.styles'
+import { Desc, Image, Message, Name, Post, PostFooter, SingleFooter, Top, TopRight, UserPic } from './Posts.styles'
 
-const SinglePost = ({name, description, message}) => {
+const SinglePost = ({name, message, photoUrl, userImg}) => {
   return (
     <>
       <Post>
         <Top>
-          <Avatar style={{width: '55px', height: '55px'}}/>
+          {
+            userImg ? <UserPic src= {userImg}/> : <Avatar style={{width: '55px', height: '55px'}}/>
+          }
+          
           <TopRight>
             <Name>
               {name}
             </Name>
             <Desc>
-              {description}
+              
             </Desc>
           </TopRight>
 
@@ -21,7 +24,25 @@ const SinglePost = ({name, description, message}) => {
         <Message>
           {message}
         </Message>
-
+        <Image src={photoUrl}/>
+        <PostFooter>
+          <SingleFooter>
+            <Avatar/>
+            <span>Like</span>
+          </SingleFooter>
+          <SingleFooter>
+            
+            <span>Comment</span>
+          </SingleFooter>
+          <SingleFooter>
+            
+            <span>Share</span>
+          </SingleFooter>
+          <SingleFooter>
+           
+            <span>Send</span>
+          </SingleFooter>
+        </PostFooter>
       </Post>
     </>
   )

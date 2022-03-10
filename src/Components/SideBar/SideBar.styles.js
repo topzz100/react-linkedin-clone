@@ -25,8 +25,8 @@ export const TopStat = styled.div`
 
 `;
 export const ImgBox = styled.div`
-   width: 80px;
-    height: 80px;
+   width: 70px;
+    height: 70px;
    border-radius: 50%; 
    border: 3px solid white; 
   margin-top: -40px; 
@@ -34,7 +34,7 @@ export const ImgBox = styled.div`
 `;
 export const CoverImage = styled.img`
    width: 100%;
-   height: 70px;
+   height: 60px;
    border-top-left-radius: 15px;
    border-top-right-radius: 15px;
 `;
@@ -47,19 +47,19 @@ export const ProfileImage = styled.img`
 export const TopName = styled.h4`
    margin-top: 20px;
    font-weight: 700;
-   font-size: 1.15rem;
+   font-size: 1rem;
    color: gray;
 
 `;
 export const TopTitle = styled.p`
    margin-top: 5px;
    color: gray;
-   font-size: .9rem;
+   font-size: .8rem;
    margin-bottom: 20px;
 `;
 export const StatsOption = styled.p`
   margin: 15px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   display: flex;
   justify-content: space-between;
 `;
