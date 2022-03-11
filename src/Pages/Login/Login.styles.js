@@ -32,6 +32,7 @@ export const  JoinBtn = styled.button`
   padding: 7px 12px;
   border-radius: 10px;
   transition: 0.5s ease-in-out;
+  cursor: pointer;
   :hover{
     background: lightgray;
   }
@@ -46,6 +47,7 @@ export const  SignInBtn = styled.button`
   transition: 0.5s linear;
   margin-left: 10px;
   border-radius: 20px;
+  cursor: pointer;
   
   :hover{
     background-color: lightblue;

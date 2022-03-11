@@ -58,6 +58,12 @@ export const Input = styled.input`
 export const Option = styled.div`
   display: flex;
   align-items: center;
+  @media(max-width: 768px){
+    .MuiSvgIcon-root{
+    font-size: 15px;
+  }
+  }
+  
   
 `;
 export const OptionTitle = styled.h4`

@@ -16,98 +16,46 @@ const PopUp = ({setShow}) => {
 
   const handlePost = (e) => {
     e.preventDefault()
+    if(file){
+      const filename = Date.now() + file?.name
+      const storage = getStorage();
+      const storageRef = ref(storage, 'images/'+filename);
+
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on('state_changed', 
+        (snapshot) => {
+          
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+
+        }, 
+        (error) => {
+          console.log(error)
+        }, 
+        () => {
+        
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            console.log('File available at', downloadURL);
+            submitPost(downloadURL)
+
+          
+          })
+          .catch(err => {
+            console.log(err);
+          });
+        }
+      );
+      setInputValue('')
+      setShow(false)
+      return
+
+    }
+    submitPost('')
+    setInputValue('')
+    setShow(false)
+ }
    
-const filename = Date.now() + file?.name
-const storage = getStorage();
-const storageRef = ref(storage, 'images/'+filename);
-
-const uploadTask = uploadBytesResumable(storageRef, file);
-
-// Register three observers:
-// 1. 'state_changed' observer, called any time the state changes
-// 2. Error observer, called on failure
-// 3. Completion observer, called on successful completion
-uploadTask.on('state_changed', 
-  (snapshot) => {
-    // Observe state change events such as progress, pause, and resume
-    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    console.log('Upload is ' + progress + '% done');
-    // switch (snapshot.state) {
-    //   case 'paused':
-    //     console.log('Upload is paused');
-    //     break;
-    //   case 'running':
-    //     console.log('Upload is running');
-    //     break;
-    // }
-  }, 
-  (error) => {
-    console.log(error)
-    // Handle unsuccessful uploads
-  }, 
-  () => {
-    // Handle successful uploads on complete
-    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-      console.log('File available at', downloadURL);
-      // setPicUrl(downloadURL)
-      submitPost(downloadURL)
-//       db.collection("posts").add({
-//               name: user.displayName,
-//               userImg: user?.photoUrl,
-//                deccription: '',
-//                message: inputValue,
-//                photoUrl : downloadURL,
-//                timestamp: serverTimestamp()
-// })
-// .then((docRef) => {
-//     console.log("Document written with ID: ", docRef.id);
-// })
-// .catch((error) => {
-//     console.error("Error adding document: ", error);
-// });
-     
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }
-);
-setInputValue('')
-     setShow(false)
-
-
-  }
-
-  //  const handlePost = async(e) => {
-  //   e.preventDefault()
-  //   const filename = file.name
-  //   if(inputValue){
-  //     if(file) {
-  //         const storageRef = ref(storage, `images/${filename}`)
-
-  //       // 'file' comes from the Blob or File API
-  //       uploadBytes(storageRef, file).then((snapshot) => {
-  //         console.log('Uploaded a blob or file!');
-  //       });
-  //       getDownloadURL(ref(storage, `images/${filename}`))
-  //       .then((url) => {
-  //         setPicUrl(url)
-  //         console.log('image downloaded')
-  //         submitPost()
-  //       })
-  //       .catch((error) => {
-      
-  //     })
-  //   }
-      
-      
-  //   }
-    
-  //   setInputValue('')
-  //   setShow(false)
-  // }
    const submitPost = async(pic) => {
      try {
              const docRef = await addDoc(collection(db, "posts"), {

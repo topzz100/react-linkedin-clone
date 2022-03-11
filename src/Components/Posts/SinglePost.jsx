@@ -25,7 +25,8 @@ const SinglePost = ({name, message, photoUrl, userImg}) => {
         <Message>
           {message}
         </Message>
-        <Image src={photoUrl}/>
+        {photoUrl && <Image src={photoUrl}/>}
+        
         <PostFooter>
           <SingleFooter>
             <ThumbUp style={{color: 'grey'}}/>

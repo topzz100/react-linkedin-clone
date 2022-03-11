@@ -71,7 +71,7 @@ export const Form = styled.form`
     border: none;
     padding: 5px;
     font-size: 0.9rem;
-
+    outline: none;
   }
 `;
 export const PostOption = styled.div`
@@ -98,6 +98,7 @@ export const PopButton = styled.button`
   border: 1px solid gray;
   border-radius: 10px;
   padding: 7px 12px;
+  cursor: pointer;
   :hover{
     background-color: lightgrey;
   }

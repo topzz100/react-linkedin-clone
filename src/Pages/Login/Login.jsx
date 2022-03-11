@@ -4,11 +4,13 @@ import { Btn, Hero, JoinBtn, LeftSec, Logo, Nav, Right, RightSec, Section, SignI
 import { useDispatch, useSelector } from 'react-redux'
 import { login, logout, selectUser } from '../../features/user/userSlice';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-  const user = useSelector(selectUser)
+  const newUser = useSelector(selectUser)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleLogin = () => {
     // if(!user){
@@ -24,7 +26,7 @@ const Login = () => {
           displayName: user.displayName,
           photoUrl: user.photoURL
         }))
-        
+        navigate("/");
         console.log(user)
     }).catch((error) => {
         console.log(error);

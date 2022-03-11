@@ -21,39 +21,46 @@ export const TopRight = styled.div`
 `;
 export const Name = styled.h4`
   font-size: 0.9rem;
+  font-weight: 500;
 `;
 export const Desc = styled.p`
   font-size: 0.8rem;
 `;
 export const Message = styled.p`
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 0.8rem;
+  margin-bottom: 10px;
 `;
 export const Image = styled.img`
-  margin-top: 10px;
+  
   width: 100%;
   object-fit: contain;
+  margin-bottom: 10px;
 `;
 export const UserPic = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 `;
 export const PostFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
-border-top: 1px solid lightgray;
-padding-top: 15px;
+  
+  border-top: 1px solid lightgray;
+  padding-top: 15px;
 `;
 export const SingleFooter = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
   span{
     margin-left: 5px;
   }
   @media(max-width: 768px){
+    .MuiSvgIcon-root{
+    font-size: 18px;
+  }
     span{
       font-size: 0.8rem;
     }

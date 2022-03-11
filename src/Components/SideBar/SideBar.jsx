@@ -20,7 +20,7 @@ const SideBar = () => {
               {user.displayName}
             </TopName>
             <TopTitle>
-              Web Developer
+              
             </TopTitle>
           
           </TopAbout>
