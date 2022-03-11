@@ -1,3 +1,4 @@
+import { Comment, Send, Share, ThumbUp } from '@mui/icons-material'
 import { Avatar } from '@mui/material'
 import React from 'react'
 import { Desc, Image, Message, Name, Post, PostFooter, SingleFooter, Top, TopRight, UserPic } from './Posts.styles'
@@ -27,19 +28,19 @@ const SinglePost = ({name, message, photoUrl, userImg}) => {
         <Image src={photoUrl}/>
         <PostFooter>
           <SingleFooter>
-            <Avatar/>
+            <ThumbUp style={{color: 'grey'}}/>
             <span>Like</span>
           </SingleFooter>
           <SingleFooter>
-            
+             <Comment style={{color: 'grey'}}/>
             <span>Comment</span>
           </SingleFooter>
           <SingleFooter>
-            
+            <Share style={{color: 'grey'}}/>
             <span>Share</span>
           </SingleFooter>
           <SingleFooter>
-           
+            <Send style={{color: 'grey'}}/>
             <span>Send</span>
           </SingleFooter>
         </PostFooter>

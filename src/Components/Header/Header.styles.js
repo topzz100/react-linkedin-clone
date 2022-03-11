@@ -9,6 +9,9 @@ export const Wrapper = styled.div`
   position: sticky;
   top: 0;
   background-color: white;
+  @media(max-width: 768px){
+    padding: 0 20px;
+  }
 `;
 export const Left = styled.div`
   display: flex;
@@ -39,6 +42,14 @@ export const SearchBox = styled.div`
     height: 100%;
     background: transparent;
   }
+  @media(max-width: 768px){
+  width: 80%;
+  /* background: transparent; */
+  /* input{
+    display: none;
+    
+  } */
+  }
 `;
 export const Option = styled.div`
   display: flex;
@@ -47,10 +58,18 @@ export const Option = styled.div`
   justify-content: center;
   color: grey;
   width: 100px;
+  @media(max-width: 768px){
+    display: none;
+    :last-child{
+      display: flex;
+      
+    }
+  }
   img{
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
+    margin-top: 5px;
   }
   :hover{
     color: black;
@@ -68,6 +87,11 @@ export const SignOut = styled.button`
   font-size: 0.8rem;
   border: 1px solid black;
   opacity: 0;
+  @media(max-width: 768px){
+   opacity: ${props => props.show && '1'};
+   right: -40px;
+   bottom: -23px;
+  }
 `;
 
 export const TitleTag = styled.h5`

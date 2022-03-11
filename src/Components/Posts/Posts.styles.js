@@ -43,8 +43,19 @@ export const PostFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
+border-top: 1px solid lightgray;
+padding-top: 15px;
 `;
 export const SingleFooter = styled.div`
   display: flex;
   align-items: center;
+  span{
+    margin-left: 5px;
+  }
+  @media(max-width: 768px){
+    span{
+      font-size: 0.8rem;
+    }
+  }
 `;

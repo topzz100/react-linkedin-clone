@@ -13,10 +13,14 @@ export const Wrapper = styled.div`
 export const Pop = styled.div`
   margin: auto;
   margin-top: 30px;
-  width: 600px;
+  width: 500px;
   min-height: 300px;
   border-radius: 15px;
   background-color: white;
+  @media(max-width: 768px){
+    width: 90%;
+    /* margin: 10px; */
+  }
 `;
 export const PopTitle = styled.div`
   width: 100%;
@@ -27,17 +31,26 @@ export const PopTitle = styled.div`
   justify-content: space-between;
   h4{
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 300;
+  }
+  @media(max-width: 768px){
+    padding: 10px;
+    h4{
+      font-size: 1rem;
+    }
   }
 `;
 export const PopTop = styled.div`
   padding: 15px;
   display: flex;
   align-items: center;
+  @media(max-width: 768px){
+    padding: 10px;
+  }
 `;
 export const Pic = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 `;
 export const PostInfo = styled.div`
@@ -54,9 +67,10 @@ export const Form = styled.form`
     width: 100%;
     margin-bottom: 30px;
     resize: none;
-    min-height:150px;
+    min-height:50px;
     border: none;
     padding: 5px;
+    font-size: 0.9rem;
 
   }
 `;

@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
    flex: 0.2; 
    margin-top: 20px;
    margin-right: 20px;
+   @media(max-width: 768px){
+    flex: 1;
+    margin: 0;
+  }
   //  background-color: white;
    
    

@@ -5,6 +5,11 @@ export const Wrapper = styled.div`
   margin-left: 20px;
   width: 100%;
   margin-top: 20px;
+  @media(max-width: 768px){
+    flex: 1;
+    margin: 0;
+    display: none;
+  }
 `;
 export const Reco = styled.div`
   padding: 15px;

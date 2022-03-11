@@ -4,6 +4,9 @@ export const Wrapper = styled.div`
   margin-top: 20px;
   flex: 0.55;
   width: 100%;
+  @media(max-width: 768px){
+    flex: 1;
+  }
 `;
 export const InputWrapper = styled.div`
   background-color: white;
@@ -24,7 +27,7 @@ export const Top = styled.div`
 export const Bottom = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 20px;
 `;
 export const Form = styled.form`
@@ -55,11 +58,16 @@ export const Input = styled.input`
 export const Option = styled.div`
   display: flex;
   align-items: center;
+  
 `;
 export const OptionTitle = styled.h4`
   margin-left: 10px;
   font-size: 0.9rem;
   color: gray;
   font-weight: 400;
+  @media(max-width: 768px){
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
 `;
 

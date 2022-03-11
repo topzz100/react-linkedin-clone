@@ -9,9 +9,15 @@ export const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 100px;
+  @media(max-width: 768px){
+    padding: 0 20px;
+  }
 `;
 export const Logo = styled.img`
   width: 150px;
+  @media(max-width: 768px){
+    width: 100px;
+  }
 `;
 export const Right = styled.div`
   display: flex;
@@ -50,17 +56,28 @@ export const Section = styled.div`
   height: 90vh;
   display: flex;
   overflow: hidden;
+  @media(max-width: 768px){
+    width: 100%;
+  }
 `;
 export const LeftSec = styled.div`
   flex: 0.5;
   padding: 10px;
   padding-left: 100px;
+  @media(max-width: 768px){
+    width: 100%;
+    padding: 10px;
+    flex: 1;
+  }
 `;
 export const RightSec = styled.div`
   flex: 0.5;
    height: 100%;
   width: 100%; 
   position: relative;
+  @media(max-width: 768px){
+    display: none;
+  }
 `;
 export const Hero = styled.img`
   width: 110%;
@@ -69,6 +86,9 @@ export const Hero = styled.img`
   position: absolute;
   
   right: -110px;
+  @media(max-width: 768px){
+    
+  }
 `;
 export const Title = styled.p`
   margin-top: 20px;
@@ -77,6 +97,10 @@ export const Title = styled.p`
   font-weight: 200;
   width: 100%;
   margin-bottom: 50px;
+  @media(max-width: 768px){
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
 `;
 
 export const Btn = styled.button`
@@ -96,6 +120,10 @@ export const Btn = styled.button`
     box-shadow: 1px 0px 12px -1px rgba(129,129,129,1);
     -webkit-box-shadow: 1px 0px 12px -1px rgba(129,129,129,1);
     -moz-box-shadow: 1px 0px 12px -1px rgba(129,129,129,1);
+  }
+  @media(max-width: 768px){
+    width: 100%;
+    margin-bottom: 15px;
   }
 `;
 

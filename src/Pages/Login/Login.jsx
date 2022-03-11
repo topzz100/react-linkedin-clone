@@ -11,7 +11,7 @@ const Login = () => {
   const dispatch = useDispatch()
 
   const handleLogin = () => {
-    if(!user){
+    // if(!user){
       const provider = new GoogleAuthProvider();
       const auth = getAuth();
       signInWithPopup(auth, provider)
@@ -30,7 +30,7 @@ const Login = () => {
         console.log(error);
 
       });
-    }
+    // }
 
   }
   return (
@@ -61,7 +61,7 @@ const Login = () => {
               <ArrowForward/>
             </Btn>
             <Btn>
-              <span>Learn anew skill</span>
+              <span>Learn a new skill</span>
               <ArrowForward/>
             </Btn>
           </LeftSec>
