@@ -58,6 +58,7 @@ export const Option = styled.div`
   justify-content: center;
   color: grey;
   width: 100px;
+  cursor: pointer;
   @media(max-width: 768px){
     display: none;
     :last-child{
@@ -87,6 +88,7 @@ export const SignOut = styled.button`
   font-size: 0.8rem;
   border: 1px solid black;
   opacity: 0;
+  cursor: pointer;
   @media(max-width: 768px){
    opacity: ${props => props.show && '1'};
    right: -40px;
