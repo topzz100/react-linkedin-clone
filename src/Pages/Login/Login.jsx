@@ -1,14 +1,14 @@
-import { ArrowForward, ChevronRight } from '@mui/icons-material'
+import { ArrowForward } from '@mui/icons-material'
 import React from 'react'
 import { Btn, Hero, JoinBtn, LeftSec, Logo, Nav, Right, RightSec, Section, SignInBtn, Title, Wrapper } from './Login.styles'
-import { useDispatch, useSelector } from 'react-redux'
-import { login, logout, selectUser } from '../../features/user/userSlice';
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { useDispatch } from 'react-redux'
+import { login } from '../../features/user/userSlice';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-  const newUser = useSelector(selectUser)
+  // const newUser = useSelector(selectUser)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 

@@ -2,7 +2,7 @@ import { Close, Image, VideoLibrary } from '@mui/icons-material'
 import React, { useState } from 'react'
 import { Form, FileImage, Pic, Name, Pop, PopTitle, PopFooter, PopUpload, PopButton, PopTop, PostInfo, PostOption, Wrapper } from './PopUp.styles'
 import { addDoc, collection, serverTimestamp, } from 'firebase/firestore'
-import { db, storage } from '../../firebase'  
+import { db} from '../../firebase'  
 // import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
  import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useSelector } from 'react-redux'
@@ -11,7 +11,7 @@ import { selectUser } from '../../features/user/userSlice'
 const PopUp = ({setShow}) => {
   const [inputValue, setInputValue] = useState('')
   const [file, setFile] = useState(null)
-  const [picUrl, setPicUrl] = useState('')
+  // const [picUrl, setPicUrl] = useState('')
   const user = useSelector(selectUser)
 
   const handlePost = (e) => {
@@ -72,8 +72,6 @@ const PopUp = ({setShow}) => {
              console.error("Error adding document: ", e);
            }
    }
-  // console.log(file)
-  // console.log(picUrl)
   
 
   return (
